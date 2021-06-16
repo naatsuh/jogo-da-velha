@@ -1,0 +1,261 @@
+.casa{
+    width:80px;
+    height:60px;
+    border:2px solid #000;
+    float: left;
+    text-align: center;
+    padding-top:20px;
+}
+
+.tabuleiro{
+    width:252px;
+    height:252px;
+    margin: auto;
+}
+html {
+    margin: 0;
+    height: 800px;
+}
+body {
+    margin: 0;
+    background: #ceddd3;
+}
+#pageGame {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    text-align: center;
+
+    width: 100%;
+}
+#game {
+    background: #ace4ef;
+    margin: 30px 10px 30px 10px;
+
+    padding: 200px;
+    width: 60%;
+    height: 100%;
+    border-radius: 5px;
+    border: #9f9f9f solid 2px;
+}
+
+.chat {
+    background: #ace4ef;
+    margin: 30px 10px 30px 10px;
+    padding:  0 20px 162px;
+    align-content: center;
+
+    width: 40%;
+    height: 100%;
+    border-radius: 5px;
+    border: #9f9f9f solid 2px;
+}
+div#chat-inGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: white;
+    margin: 40px 0;
+    padding: 20px;
+    width: 460px;
+    height: 430px;
+
+    border-radius: 5px;
+    border: black solid 2px;
+}
+
+div.mensagem  {
+    display: flex;
+    flex-direction: row;
+}
+div.mensagem #horas {
+    padding: 0 7px 0 0;
+}
+
+div.mensagem #user {
+    padding: 0 5px 0 0;
+}
+
+div.mensagem #msg {
+    
+}
+
+
+div.button-panel-chat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 0;
+    width: 100%;
+}
+
+div.button-panel-chat #mensagem {
+    width: 320px;
+}
+
+div.barraNavegacao {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    background: #ace4ef;
+    border: #9f9f9f solid 2px;
+    height: 75px;
+    align-items: center;
+}
+div.barraNavegacao a {
+    padding: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: Arial;
+    font-weight: bolder;
+    color: black;
+    border: #aed0d9 solid 2px;
+    border-width: 0 2px 0 0;
+
+}
+
+div.menuInicio {
+    margin: 15% 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+button.button {
+    background: #977E7E;
+    margin: 20px 0px 20px 0px;
+    padding: 20px 0px 20px 0px;
+    border-radius: 12px;
+    width: 45%;
+    text-align: center;
+    font-size: 32px;
+}
+
+div.panel{
+    margin: 11% auto;
+    padding: 20px;
+    background: #ace4ef;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 32%;
+    border: #aed0d9 solid 4px;
+}
+
+div.button-panel input {
+    float: right;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+form.criacaodesala {
+    display: flex;
+    flex-direction: column;
+}
+form.criacaodesala label{
+    font-size: 28px;
+    font-weight: bolder;
+    font-family: Arial;
+}
+
+form.criacaodesala input{
+    margin: 10px 0;
+    width: 30%;
+}
+#nickname {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+    border: #aed0d9 solid 2px;
+    border-width: 2px 0;
+}
+div.painel-listaDeSala{
+    margin: 11% auto;
+    padding: 20px;
+    background: #ace4ef;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 60%;
+    border: #aed0d9 solid 4px;
+}
+table.listaDeSala {
+    background: #ffffff;
+    border: black solid 2px;
+    width: 100%;
+    height: 70%;
+    margin: 0 0 20px 0;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+table.listaDeSala td {
+    padding: 0;
+    margin: 0;
+    border: black solid 2px;
+    border-width: 0 2px 0 0;
+}
+
+.jogosEmAberto {
+    margin: 0;
+    padding: 0;
+}
+
+#painel-jogador {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 20%;
+}
+#info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 0 10px 0;
+}
+
+#mostrador{
+    display: flex;
+    flex-direction: row;
+
+    width:252px;
+    height: 80px;
+}
+
+form.entraNaSala {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 0;
+    margin: 0;
+
+    font-weight: bold;
+    font-family: Arial;
+}
+form.entraNaSala p {
+    margin: 0 0 2px 0;
+}
+
+form.entraNaSala button {
+    font-weight: bold;
+    font-family: Arial;
+    margin: 2px 0 0 0;
+}
+
+form.entraNaSala input {
+    width: 450px;
+    height: 25px;
+}
+
+
