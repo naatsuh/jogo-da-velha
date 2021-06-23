@@ -27,8 +27,6 @@ $( function() {
         }
     }
 
-
-
     function casasIguais(a, b, c) {
         var casaA = $("#casa" + a);
         var casaB = $("#casa" + b);
@@ -58,7 +56,8 @@ $( function() {
             casasIguais(1, 5, 9) || casasIguais(3, 5, 7)
         ) {
             $("#resultado").html("<h1>O jogador " + vencedor + " venceu! </h1>");
-
+            //console.log("oooopa teve um ganhador");
+            setTimeout(playerWin(), 1000);
             //document.getElementById("resultado").innerHTML = "Vencedor é : " + vencedor;
             $(".casa").off("click");
         }
@@ -75,11 +74,23 @@ $( function() {
     document.getElementById("casa8").onclick = function(){cliquenacasa("8")};
     document.getElementById("casa9").onclick = function(){cliquenacasa("9")};
 
+    function playerWin(){
+        $.ajax({    //create an ajax request to display.php
+            type: "GET",
+            url: "models/actionBD/playerWin.php?numero_do_jogo=" + numero_do_jogo + "&vencedor=" + vencedor,
+            dataType: "html",   //expect html to be returned
+            success: function (response) {
+                if (response != "") {
+                    //console.log("casa" + response);
+                }
+            }
+        });
+    }
 
 
     function cliquenacasa(numcasa) {
         //console.log("jogador: "+jogador+", clicou e eh a vez de:"+vez);
-        if(jogador==vez && vencedor == ""){
+        if(jogador == vez && vencedor == ""){
             $.ajax({
                 type: "GET",
                 url: "../models/actionBD/savePlay.php?numero_do_jogo="+numero_do_jogo+"&numero_do_jogador="+jogador+"&posicao="+numcasa+"&ordem_da_jogada="+jogadaatual,
