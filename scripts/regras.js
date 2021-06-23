@@ -4,19 +4,14 @@ $( function() {
     var vencedor = "";
     var jogador = document.getElementById("jogador").value;
     var njogador = document.getElementById("nome_do_jogador").value;
-    var numero_do_jogo = 1;
+    var numero_do_jogo = document.getElementById("numero_do_jogo").value;
     var jogadaatual = vez;
 
-    var gameOver = false;
+    //var gameOver = false;
     var turn = vez;
 
-
-    
-    
     function atualizaMostrador() {
-        
-        if (gameOver) {return;}
-
+        //if (gameOver) {return;}
         if (turn == vez) {
             document.getElementById("num_jogador").innerHTML = "Jogador: " + jogador;
             document.getElementById("nome_jogador").innerHTML = "Nickname: " + njogador;
@@ -32,6 +27,8 @@ $( function() {
         }
     }
 
+
+
     function casasIguais(a, b, c) {
         var casaA = $("#casa" + a);
         var casaB = $("#casa" + b);
@@ -40,10 +37,14 @@ $( function() {
         var bgB = $("#casa" + b).css("background-image");
         var bgC = $("#casa" + c).css("background-image");
         if ((bgA == bgB) && (bgB == bgC) && (bgA != "none" && bgA != "")) {
-            if (bgA.indexOf("1.png") >= 0)
+            if (bgA.indexOf("1.png") >= 0) {
                 vencedor = "1";
-            else
+                //console.log("vencedor " + vencedor);
+            }
+            else{
                 vencedor = "2";
+                //console.log("vencedor " + vencedor);
+            }
             return true;
         } else {
             return false;
@@ -57,8 +58,9 @@ $( function() {
             casasIguais(1, 5, 9) || casasIguais(3, 5, 7)
         ) {
             $("#resultado").html("<h1>O jogador " + vencedor + " venceu! </h1>");
-            $(".casa").off("click");
 
+            //document.getElementById("resultado").innerHTML = "Vencedor é : " + vencedor;
+            $(".casa").off("click");
         }
     }
 
@@ -73,27 +75,23 @@ $( function() {
     document.getElementById("casa8").onclick = function(){cliquenacasa("8")};
     document.getElementById("casa9").onclick = function(){cliquenacasa("9")};
 
-    function cliquenacasa(numcasa)
-    {
-        console.log("jogador"+jogador+" clicou e eh a vez de:"+vez);
-        if(jogador==vez)
-        {
+
+
+    function cliquenacasa(numcasa) {
+        //console.log("jogador: "+jogador+", clicou e eh a vez de:"+vez);
+        if(jogador==vez && vencedor == ""){
             $.ajax({
                 type: "GET",
                 url: "../models/actionBD/savePlay.php?numero_do_jogo="+numero_do_jogo+"&numero_do_jogador="+jogador+"&posicao="+numcasa+"&ordem_da_jogada="+jogadaatual,
                 dataType: "html",   //expect html to be returned
                 success: function(response){
-                    if(response == "ok")
-                    {
+                    if(response == "ok") {
                         mostraImagem("casa"+numcasa);
                     }
-                    else
-                    {
+                    else{
                         alert("Não salvou a jogada");
                     }
-
                 }
-
             });
         }
     }
@@ -112,7 +110,7 @@ $( function() {
     }
     
     function buscaNovasJogadas() {
-        console.log("jogada atual"+ jogadaatual + "vez autal:"+vez);
+        //console.log("jogada atual: "+ jogadaatual + ", vez autal:"+vez);
         $.ajax({    //create an ajax request to display.php
             type: "GET",
             url: "models/actionBD/recentPlay.php?numero_do_jogo=" + numero_do_jogo + "&ordem_da_jogada=" + jogadaatual,
@@ -121,7 +119,9 @@ $( function() {
                 if (response != "") {
                     //console.log("casa" + response);
                     mostraImagem("casa" + response);
+                    atualizaMostrador(); // atualiza painel
                     buscaNovasJogadas(); // busca novamente
+                    verificarFimDeJogo();
                 } else {
                     //console.log("nada ainda...");
                     setTimeout(buscaNovasJogadas, 5000);
@@ -132,11 +132,10 @@ $( function() {
     }
 
 
+
     $(document).ready(function () {
-    atualizaMostrador();
     buscaNovasJogadas();
-    
-        
+    atualizaMostrador(); // atualiza painel
     });
 
 });

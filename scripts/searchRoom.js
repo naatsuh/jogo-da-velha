@@ -12,11 +12,7 @@ $( function() {
                 }
             }
         });
-        setTimeout(buscaJogosEmAbertos, 10000);
-    }
-
-    function conectaSala(){
-
+        setTimeout(buscaJogosEmAbertos, 1000);
     }
 
     $(document).ready(function () {

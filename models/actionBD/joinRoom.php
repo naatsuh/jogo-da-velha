@@ -13,7 +13,7 @@ require_once("../conexaoBancoDeDados.php");
 
     $_SESSION["jogador"] = 2;  //esse pc eh o jogador 2 porque aceitou o desafio
     $_SESSION["nomeJogador"] = $nome2;
-    $_["nome_da_sala"] = $_GET["nome_da_sala"];
+    $_SESSION["nome_da_sala"] = $_GET["nome_da_sala"];
 
 
     header('Location: '."inicializajogo.php");

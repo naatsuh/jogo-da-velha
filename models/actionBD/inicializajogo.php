@@ -12,8 +12,7 @@
      $nome1 = $valores["nome_do_jogador1"];
      $nome2 = $valores["nome_do_jogador2"];
 
-     $_SESSION["jogador"] = 1;
-     $_SESSION["nomejogador"] = $nome2;
+
      $_SESSION["numero_do_jogo"] = $num_jogo;
   }
   //redireciona para o jogo

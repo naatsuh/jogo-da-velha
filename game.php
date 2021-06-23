@@ -9,9 +9,11 @@
     
     <?php //echo '"'.$_SESSION["jogador"].'"'; ?>
     <?php //echo '"'.$_SESSION["nomeJogador"].'"'; ?>
+    <?php //echo '"'.$_SESSION["numero_do_jogo"].'"'; ?>
 
     <input type="hidden" id="jogador" value=<?php echo '"'.$_SESSION["jogador"].'"'; ?>>
     <input type="hidden" id="nome_do_jogador" value=<?php echo '"' . $_SESSION["nomeJogador"] . '"';?>>
+    <input type="hidden" id="numero_do_jogo" value=<?php echo '"' . $_SESSION["numero_do_jogo"] . '"';?>>
 
     <div id="pageGame">
         <div id="game">
@@ -24,8 +26,10 @@
                 </div>
                 <div id="mostrador">
                     <p>Vez do Jogador:</p>
+
                     <img src="" border="0" height="50">
                 </div>
+                <p id="resultado"></p>
 
             </div>
 

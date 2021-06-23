@@ -10,8 +10,8 @@
     session_start();
     $_SESSION["jogador"] = 1;
     $_SESSION["nomeJogador"] = $nome_do_jogador1;
-    $_SESSION["nomeSala"] = $nome_da_sala;
+    $_SESSION["nome_da_sala"] = $nome_da_sala;
 
-    header("Location: ". "../../game.php");
+    header("Location: ". "inicializajogo.php");
     
 ?>
