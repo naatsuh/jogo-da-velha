@@ -12,6 +12,6 @@
     $_SESSION["nomeJogador"] = $nome_do_jogador1;
     $_SESSION["nomeSala"] = $nome_da_sala;
 
-    header("Location: ". "inicializajogo.php");
+    header("Location: ". "../../game.php");
     
 ?>

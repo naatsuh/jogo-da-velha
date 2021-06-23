@@ -258,4 +258,14 @@ form.entraNaSala input {
     height: 25px;
 }
 
+.jogosEmAberto a {
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: bold;
+    color: black;
 
+    border: black solid 2px;
+    border-radius: 3px;
+    background-color: #9f9f9f;
+    padding: 2px;
+}

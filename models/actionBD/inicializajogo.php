@@ -2,7 +2,7 @@
   require_once("../conexaoBancoDeDados.php");
 
   session_start();
-  $nome_da_sala = $_SESSION["nomeSala"];
+    $nome_da_sala = $_SESSION["nome_da_sala"];
 
   $resultado = $conexao->query("SELECT * FROM jogos WHERE nome_da_sala = '$nome_da_sala'");
   
@@ -11,10 +11,10 @@
      $num_jogo = $valores["numero_do_jogo"];
      $nome1 = $valores["nome_do_jogador1"];
      $nome2 = $valores["nome_do_jogador2"];
-     
-     $_SESSION["num_jogo"] = $num_jogo;
-     $_SESSION["jogador1"] = $nome1;
-     $_SESSION["jogador2"] = $nome1;
+
+     $_SESSION["jogador"] = 1;
+     $_SESSION["nomejogador"] = $nome2;
+     $_SESSION["numero_do_jogo"] = $num_jogo;
   }
   //redireciona para o jogo
   header("Location: " . "../../game.php");

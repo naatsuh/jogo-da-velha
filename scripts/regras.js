@@ -30,8 +30,6 @@ $( function() {
             var player = document.querySelectorAll("div#mostrador img") [0];
             player.setAttribute("src", "2.png");
         }
-        //$("#mostrador").load();
-        //$("#mostrador").load(location.href + " #mostrador");
     }
 
     function casasIguais(a, b, c) {

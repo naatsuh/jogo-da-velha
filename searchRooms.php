@@ -1,6 +1,11 @@
 <?php
     session_start();
     require_once ("./models/actionBD/openGames.php");
+
+    $jogador2 = $_GET["jogador2"];
+    if ($jogador2 == null) {
+        header("Location: nameAfterGame.php");
+    }
 ?>
 
 <html>
@@ -20,14 +25,20 @@
                 <td>ID</td>
                 <td>NOME DA SALA</td>
                 <td>JOGADOR</td>
+                <td>STATUS</td>
             </tr>
 
             <?php
             if ($_SESSION["openGames"] == '1') {
                 ?>
-                <tr>
+                <tr style="
+                                height: 10%;
+                                max-height: 40px;
+                              "
+                >
                     <td>-----</td>
                     <td>SEM JOGO</td>
+                    <td>SEM JOGADOR</td>
                     <td>-----</td>
                 </tr>
                 <?php
@@ -39,12 +50,12 @@
                                 height: 10%;
                                 max-height: 40px;
                                 background-color: #c6ffcc;
-                              "
-                    >
+                              ">
 
-                        <td><?php echo $linha["numero_do_jogo"];?><a href=""/> </td>
+                        <td><?php echo $linha["numero_do_jogo"];?></td>
                         <td><?php echo $linha["nome_da_sala"];?></td>
                         <td><?php echo $linha["nome_do_jogador1"];?></td>
+                        <td><a href=<?php echo '"./models/actionBD/joinRoom.php?jogador2='.$jogador2 .'&numero_do_jogo='.$linha["numero_do_jogo"].'&nome_da_sala='.$linha["nome_da_sala"].'"'?>>ENTRAR</a></td>
                     </tr>
                     <?php
                 }
