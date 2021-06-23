@@ -7,7 +7,7 @@
                 class="button">CRIAR SALA
         </button>
         <button
-                onclick="window.location.href='searchRooms.php'"
+                onclick="window.location.href='nameAfterGame.php'"
                 class="button"
                 >PROCURAR SALAS
         </button>

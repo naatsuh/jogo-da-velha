@@ -41,6 +41,7 @@
                                 background-color: #c6ffcc;
                               "
                     >
+
                         <td><?php echo $linha["numero_do_jogo"];?><a href=""/> </td>
                         <td><?php echo $linha["nome_da_sala"];?></td>
                         <td><?php echo $linha["nome_do_jogador1"];?></td>
@@ -50,15 +51,6 @@
             }
             ?>
         </table>
-        <div class="button-panel">
-            <form class="entraNaSala">
-                <p>Coloque nome e selecione o jogo</p>
-                <input type="text" required="required" id="nome_do_jogador2" placeholder="Digite seu nome">
-                <button
-                    onclick="window.location.href='game.php'">ATUALIZAR LISTA
-                </button>
-            </form>
-        </div>
     </div>
     </body>
 </html>

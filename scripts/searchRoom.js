@@ -1,6 +1,6 @@
 $( function() {
     function buscaJogosEmAbertos() {
-        $("#jogosEmAberto").load();
+        $("#jogosEmAberto").load(" #jogosEmAberto > *");
         //console.log("jogada atual"+ jogadaatual + "vez autal:"+vez);
         $.ajax({    //create an ajax request to display.php
             type: "GET",
